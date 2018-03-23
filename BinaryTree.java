@@ -1,6 +1,7 @@
 public class BinaryTree {
     public static void main(String[] args) {
-        Node root = new Node(1);
+
+        Node root = new BinaryTree().new Node(1);
         insert(root, 2);
         insert(root, 3);
         insert(root,4);
@@ -20,7 +21,7 @@ public class BinaryTree {
             if(node.left == null){
                 System.out.println(" Inserted " + value + " to left of " + node.data);
                 //create the node
-                node.left = new Node(value);
+                node.left = new BinaryTree().new Node(value);
             } else{
                 insert(node.left, value);
 
@@ -29,7 +30,7 @@ public class BinaryTree {
         } else if(value > node.data){
             if(node.right == null){
                 System.out.println(" Inserted " + value + " to right of " + node.data);
-                node.right = new Node(value);
+                node.right = new BinaryTree().new Node(value);
             } else{
                 insert(node.right, value);
             }
@@ -53,11 +54,11 @@ public class BinaryTree {
         protected Node left;
         protected Node right;
         protected int data;
-        
+
         public Node(int data){
             this.data = data;
-            
+
         }
-        
+
     }
 }
