@@ -13,6 +13,7 @@ public class BinaryTree {
 
         int m = sum(root);
         System.out.println("sum " + m);
+
     }
 
 
