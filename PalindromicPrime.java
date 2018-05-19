@@ -8,6 +8,8 @@ public class PalindromicPrime {
 		
 	}
 	
+	
+	
 	public static boolean isPrime(int num) {
 		if(num == 2) return true;
 		for(int i = 2; i <= num/2; i++) {
@@ -30,6 +32,7 @@ public class PalindromicPrime {
 				// check if the prime is palindrome
 				if(p.equals(r)) {
 					arr[index] = p;
+					printPrime(i, count);
 					index++;
 					count++;
 					
@@ -37,9 +40,19 @@ public class PalindromicPrime {
 			}
 		}
 		
-		System.out.println(Arrays.toString(arr));
 		return arr;
 	}
+	
+	public static void printPrime(int prime, int count) {
+		final int NUMBER_OF_PRIMES_PER_LINE = 10;
+		if(count % NUMBER_OF_PRIMES_PER_LINE == 0) {
+			System.out.printf("%-5s\n", prime);
+		} else {
+			System.out.printf("%-10s", prime);
+		}
+		
+	}
+	
 	
 	public static String reverseNum(int num) {
 		String n = Integer.toString(num);
